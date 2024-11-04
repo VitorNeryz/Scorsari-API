@@ -1,8 +1,8 @@
-package com.nery.LearningSpringBoot.converters;
+package com.nery.Scorsari.converters;
 
 import java.util.stream.Stream;
 
-import com.nery.LearningSpringBoot.enums.OrderStatus;
+import com.nery.Scorsari.enums.OrderStatus;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

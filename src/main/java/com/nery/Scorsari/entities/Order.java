@@ -1,11 +1,13 @@
-package com.nery.LearningSpringBoot.entities;
+package com.nery.Scorsari.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.nery.LearningSpringBoot.enums.OrderStatus;
+import com.nery.Scorsari.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,10 +15,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="tb_order")
+@Table(name ="tb_Customer_order")
 public class Order implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -26,16 +29,20 @@ public class Order implements Serializable{
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
 	private Instant moment;
-	
 	private OrderStatus status;
+	private Double totalPrice;
+	private String trackingNumber;
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_client_id")
-	private User client;
+	private Customer client; 
+	
+	@OneToMany
+	List<OrderItem> orderItens = new ArrayList<>();
 	
 	public Order() {}
 	
-	public Order(Instant moment, User client,OrderStatus status) {
+	public Order(Instant moment, Customer client,OrderStatus status) {
 		this.moment = moment;
 		this.client = client;
 		this.status = status;
@@ -65,11 +72,11 @@ public class Order implements Serializable{
 		this.status = status;
 	}
 
-	public User getClient() {
+	public Customer getClient() {
 		return client;
 	}
 
-	public void setClient(User client) {
+	public void setClient(Customer client) {
 		this.client = client;
 	}
 

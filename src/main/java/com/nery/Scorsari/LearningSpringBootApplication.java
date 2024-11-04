@@ -1,4 +1,4 @@
-package com.nery.LearningSpringBoot;
+package com.nery.Scorsari;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

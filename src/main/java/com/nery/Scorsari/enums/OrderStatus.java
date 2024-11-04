@@ -1,4 +1,4 @@
-package com.nery.LearningSpringBoot.enums;
+package com.nery.Scorsari.enums;
 
 public enum OrderStatus {
 	WAITING_PAYMENT(0),

@@ -1,4 +1,4 @@
-package com.nery.LearningSpringBoot.services;
+package com.nery.Scorsari.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nery.LearningSpringBoot.entities.Order;
-import com.nery.LearningSpringBoot.repositories.OrderRepository;
+import com.nery.Scorsari.entities.Order;
+import com.nery.Scorsari.repositories.OrderRepository;
 
 @Service
 public class OrderService {

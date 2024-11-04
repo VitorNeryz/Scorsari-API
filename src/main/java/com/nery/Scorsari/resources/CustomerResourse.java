@@ -1,4 +1,4 @@
-package com.nery.LearningSpringBoot.resources;
+package com.nery.Scorsari.resources;
 
 import java.util.List;
 
@@ -9,24 +9,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nery.LearningSpringBoot.entities.Order;
-import com.nery.LearningSpringBoot.services.OrderService;
+import com.nery.Scorsari.entities.Customer;
+import com.nery.Scorsari.services.CustomerService;
 
 @RestController
-@RequestMapping(value = "/orders")
-public class OrderResourse {
+@RequestMapping(value = "/users")
+public class CustomerResourse {
 	@Autowired
-	private OrderService service;
+	private CustomerService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Order>> findAll(){
-		List<Order> list = service.findAll();
+	public ResponseEntity<List<Customer>> findAll(){
+		List<Customer> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Order> findById(@PathVariable Long id){
-		Order obj = service.findById(id);
+	public ResponseEntity<Customer> findById(@PathVariable Long id){
+		Customer obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 }

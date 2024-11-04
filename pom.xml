@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.nery</groupId>
-	<artifactId>LearningSpringBoot</artifactId>
+	<artifactId>Scorsari</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LearningSpringBoot</name>
-	<description>Aprendendo spring boot no curso de java do nélio alves !!</description>
+	<name>Scorsari</name>
+	<description>API REST para um site de e-commerce focado em artesanato</description>
 	<url />
 	<licenses>
 		<license />
